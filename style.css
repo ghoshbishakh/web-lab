@@ -1,0 +1,133 @@
+/* DEFAULT STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('grey.png');
+    font-family: sans-serif;
+    padding-bottom: 2em;
+}
+
+
+/* LOGIN AND SIGNUP PAGE STYLES */
+
+#signup-wrapper {
+			border-left: 2px solid rgba(98, 137, 206, 1);
+			max-width: 26em;
+			padding-left: 2em;
+			margin: 0 auto;
+		}
+.text-input {
+		float: right;
+	}
+
+#submit-button {
+		background: none repeat scroll 0% 0% #96BDF0;
+		border: none;
+		border-radius: 0.2em !important;
+		border: 1px solid rgba(39, 142, 207, 1);
+		padding: 0.2em;
+		text-align: center;
+		font-size: 1.1em;
+	}
+#submit-button:hover {
+		cursor: pointer;
+	}
+.right{
+	background-color: rgba(47, 114, 141, 1);
+	position: absolute;
+	right: 0px;
+	width: 400px;
+	padding: 100px;
+	border: 3px solid black;
+}
+.left{
+	background-color: rgba(47, 114, 141, 1);
+	position: absolute;
+	left: 0px;
+	width: 400px;
+	padding: 100px;
+	border: 3px solid black;
+
+
+}
+
+/* STUDENT HOME PAGE STYLES */
+
+#nit-logo {
+    height:100px;
+    width:100px;
+    float: left;
+}
+
+#heading{
+	text-align: center;
+	font-size: 30px;
+	padding:0;
+	color: #1a1a1a;
+	text-shadow: 2px 2px grey;
+}
+.navigation_bar_hor{
+    margin:0;
+    padding:0;
+    width:100%;
+    height:50px;
+    background:rgba(50, 17, 17, 1);
+    font-size:20px;
+}
+
+#navr ul{
+    
+    list-style-type:none;
+    margin:0 300px;
+    padding:0;
+    background-color:rgba(29, 93, 77, 1);
+    
+}
+
+#navr li{
+	float:left;
+	border-right:1px solid #bbb;
+}
+
+#navr li a{
+    
+    display:block;
+    text-decoration:none;
+    padding:14px 16px;
+    color:white;
+
+}
+#navr li a.active{
+    
+    background-color:green;
+
+}
+
+#navr li a:hover{
+    
+    background-color:orange;
+
+}
+.dropdown-content {
+    color: black;
+    display: none;
+    position: absolute;
+    background-color: #a1a1a1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}

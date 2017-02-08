@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign up</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+	<img id="nit-logo" src="nit.jpg" alt="NIT LOGO">
+	<div id="heading">
+		<p><b> WELCOME </b></p>
+		<p><b>STUDENT INFORMATION SYSTEM</b></p>
+		<p><b>NATIONAL INSTITUTE OF TECHNOLOGY, DURGAPUR</b></p>
+	</div>
+
+	<div class="navigation_bar_hor">
+		<div id="navr">
+			<ul>
+				<li> <a href="#home">Home</a></li>
+				<li> <a href="#about">About</a></li>
+				<li> <a href="#notice">Notice </a></li>
+				<li> <a href="#academics">Academics</a></li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<center>
+		<h1>Sign up</h1>
+	</center>
+	<div id="signup-wrapper">
+		<form>
+			<label>Username: </label>
+			<input class="text-input" type="text" name="username" placeholder="username">
+			<br><br><label>Email: </label>
+			<input class="text-input" type="email" name="email" placeholder="Email ID">
+			<br><br><label>Full Name: </label>
+			<input class="text-input" type="text" name="fullname" placeholder="Full Name">
+			<br><br><label>Branch: </label>
+			<input class="text-input" type="text" name="branch" placeholder="Branch. Eg: IT">
+			<br><br><label>Roll No: </label>
+			<input id="roll" class="text-input" type="text" name="roll" placeholder="14/IT/11">
+
+			<br><br><label>Contact Number: </label>
+			<input class="text-input" type="tel" name="contactnumber" placeholder="Contact Number">
+			<br><br><label>Gender: </label>
+			<center>
+				<input type="radio" name="gender" value="male">Male<br>
+				<input type="radio" name="gender" value="female">Female<br>
+				<input type="radio" name="gender" value="other">Other<br>
+			</center>
+			<br><br><label>Date Of Birth: </label>
+			<input id="dob" class="text-input" type="date" name="dob" placeholder="1995-10-30">
+
+			<br><br><label>Password: </label>
+			<input id="password-field" class="text-input" type="password" name="password" placeholder="Password">
+			<br><br><label>Confirm Password: </label>
+			<input id="confirm-password-field" class="text-input" type="password" name="confirm-password" placeholder="Confirm Password">
+			<br>
+			<br>
+			<center><input id="submit-button" type="submit" value="Submit" onclick="validatePassword()"></center>
+		</form>
+	</div>
+
+	<script type="text/javascript">
+	function validatePassword(){
+		var password = document.getElementById("password-field");
+		var confirmPassword = document.getElementById("confirm-password-field");
+		if(password.value != confirmPassword.value){
+			alert("Passwords don't match!");
+		}
+	}
+	</script>
+
+</body>
+</html>
