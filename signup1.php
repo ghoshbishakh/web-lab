@@ -8,14 +8,14 @@
   </head>
 
   <body>
-    <img id="nit-logo" src="nit.jpg" alt="NIT LOGO">
+
     <div id="heading">
-      <p><b> WELCOME </b></p>
-      <p><b>STUDENT INFORMATION SYSTEM</b></p>
-      <p><b>NATIONAL INSTITUTE OF TECHNOLOGY, DURGAPUR</b></p>
+    <img id="nit-logo" src="images/nit.jpg" alt="NIT LOGO">
+    <p><b>STUDENT INFORMATION SYSTEM</b></p>
+    <p><b>NATIONAL INSTITUTE OF TECHNOLOGY, DURGAPUR</b></p>
     </div>
 
-    <div class="navigation_bar_hor">
+    <div class="navigation_bar">
         <div id="navr">
             <ul>
                 <li> <a href="index.html">Home</a></li>
@@ -23,16 +23,15 @@
                 <li> <a href="#academics">Academics</a></li>
                 <li> <a href="signup1.php" target="blank">Student Sign Up</a></li>
                 <li class="dropdown">
-                  <a class="dropbtn">Log In</a>
-                  <div class="dropdown-content">
-                    <a href="admin_login.html" target="blank">Administrator Login</a>
-                    <a href="login.php" target="blank">Student Login</a>
-                  </div>
+                    <a class="dropbtn">Log In</a>
+                    <div class="dropdown-content">
+                        <a href="admin_login.html" target="blank">Administrator Login</a>
+                        <a href="login.php" target="blank">Student Login</a>
+                    </div>
                 </li>
             </ul>
 
         </div>
-
     </div>
 
 

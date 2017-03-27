@@ -28,7 +28,9 @@
     if($con->query($query_str) === TRUE)
 	{
 	  echo "<br><h2> Your record has been added successfully.. Redirecting to REgistration Page in 2 seconds</h2>";
-	  header( "refresh:2;url=reg.html" );
+      session_start(); 
+      $_SESSION['login_user']=$username;
+	  header( "refresh:2;url=profile.php" );
 	}
 	else
 	{

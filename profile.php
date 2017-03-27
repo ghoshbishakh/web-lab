@@ -6,14 +6,13 @@
 
 </head>
 <body style="background-image:url('plot.jpg');background-repeat:no-repeat;background-size:cover;">
-    <img id="nit-logo" src="nit.jpg" alt="NIT LOGO">
     <div id="heading">
-        <p><b> WELCOME </b></p>
-        <p><b>STUDENT INFORMATION SYSTEM</b></p>
-        <p><b>NATIONAL INSTITUTE OF TECHNOLOGY, DURGAPUR</b></p>
+    <img id="nit-logo" src="images/nit.jpg" alt="NIT LOGO">
+    <p><b>STUDENT INFORMATION SYSTEM</b></p>
+    <p><b>NATIONAL INSTITUTE OF TECHNOLOGY, DURGAPUR</b></p>
     </div>
 
-    <div class="navigation_bar_hor">
+    <div class="navigation_bar">
         <div id="navr">
             <ul>
                 <li> <a href="index.html">Home</a></li>
@@ -27,12 +26,10 @@
                         <a href="login.php" target="blank">Student Login</a>
                     </div>
                 </li>
-                <li> <a href="logout.php" target="blank">Logout</a></li>
             </ul>
 
         </div>
     </div>
-
     <br><br><br>
 
     <?php
