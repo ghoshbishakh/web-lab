@@ -1,3 +1,15 @@
+<?php
+    $host = 'localhost';
+    $db = 'student';
+    $user = 'root';
+    $password = 'root';
+    $con = new mysqli($host,$user,$password) or die('connection failed');
+    // echo "connection established";
+    mysqli_select_db($con,$db);
+
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,6 +38,16 @@
                         <a href="login.php" target="blank">Student Login</a>
                     </div>
                 </li>
+                <?php
+                // echo $_SESSION['login_user'];
+                if (isset($_SESSION['login_user'])){
+                    ?>
+
+                    <li> <a href="logout.php" target="blank">Logout</a></li>
+
+                    <?php
+                    } 
+                    ?>
             </ul>
 
         </div>
@@ -33,16 +55,6 @@
     <br><br><br>
 
     <?php
-    $host = 'localhost';
-    $db = 'student';
-    $user = 'root';
-    $password = 'root';
-    $con = new mysqli($host,$user,$password) or die('connection failed');
-    // echo "connection established";
-    mysqli_select_db($con,$db);
-
-    session_start();
-
     // echo $_SESSION['login_user'];
     if (isset($_SESSION['login_user'])){
     // LOGGED IN

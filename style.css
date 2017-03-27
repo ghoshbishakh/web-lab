@@ -4,10 +4,20 @@ body {
     padding: 0;
     padding-bottom: 2em;
     font-family: sans;
+    background: url('images/pattern.png');
 }
 
 .content-wrapper {
     max-width: 1366px;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5em;
+    color: #1a1a1a;
+    background: rgba(255, 255, 255, 0.78);
+    overflow: auto;
 }
 
 /* Header Styles */
@@ -30,8 +40,6 @@ body {
 }
 
 #navr ul{
-    width: 32em;
-    margin: 0 auto;
     list-style-type:none;
     padding:0;
     position:relative;

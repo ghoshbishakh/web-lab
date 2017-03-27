@@ -34,7 +34,7 @@
         </div>
     </div>
 
-
+<div class="content">
     <center>
       <h1>Sign up</h1>
     </center>
@@ -122,7 +122,7 @@
         </center>
       </form>
     </div>
-
+</div>
     <script type="text/javascript">
 
       function resetFields(){

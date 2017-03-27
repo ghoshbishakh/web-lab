@@ -31,7 +31,7 @@
         </div>
     </div>
 
-	
+	<div class="content">
 	<div id="signup-wrapper">
 		<div style="float:left; width:50%;">
 		</div>
@@ -52,6 +52,7 @@
 		<a href="#">Forgot your Password?</a>
 		</center>
 	</div>
+    </div>
 	
 
 </body>
