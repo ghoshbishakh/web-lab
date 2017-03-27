@@ -14,23 +14,31 @@
 	</div>
 
 	<div class="navigation_bar_hor">
-		<div id="navr">
-			<ul>
-				<li> <a href="#home">Home</a></li>
-				<li> <a href="#about">About</a></li>
-				<li> <a href="#notice">Notice </a></li>
-				<li> <a href="#academics">Academics</a></li>
-			</ul>
+        <div id="navr">
+            <ul>
+                <li> <a href="index.html">Home</a></li>
+                <li> <a href="#academics">Academics</a></li>
+                <li> <a href="signup1.php" target="blank">Student Sign Up</a></li>
+                <li class="dropdown">
+                  <a class="dropbtn">Log In</a>
+                  <div class="dropdown-content">
+                    <a href="admin_login.html" target="blank">Administrator Login</a>
+                    <a href="login.php" target="blank">Student Login</a>
+                  </div>
+                </li>
+            </ul>
 
-		</div>
+        </div>
 
-	</div>
+    </div>
+
+	
 	<div id="signup-wrapper">
 		<div style="float:left; width:50%;">
 		</div>
 		<div style="float:left; width:50%;">
 		</div>	
-		<form>
+		<form method="post" action="logincheck.php">
 			<center>
 				<h1>Student Login</h1>
 			</center>
@@ -39,9 +47,13 @@
 			<br><br><label>Password: </label>
 			<input class="text-input" type="password" name="password" placeholder="Password">
 			<br><br>
-			<center><input id="submit-button" type="submit" value="Submit "></center>
+			<center><input id="submit-button" type="submit" name="submit" value="Submit "></center>
 		</form>
+		<center>
+		<a href="#">Forgot your Password?</a>
+		</center>
 	</div>
+	
 
 </body>
 </html>

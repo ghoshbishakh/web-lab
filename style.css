@@ -2,11 +2,21 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('grey.png');
+    background: url('dgp.jpg');
+	background-repeat:no-repeat;background-size:cover;
     font-family: sans-serif;
     padding-bottom: 2em;
 }
 
+.greenborder {
+    border-color: green;
+    border-radius: 5%;
+}
+
+.redborder {
+    border-color: red;
+    border-radius: 5%;
+}
 
 /* LOGIN AND SIGNUP PAGE STYLES */
 
@@ -80,6 +90,7 @@ body {
     list-style-type:none;
     margin:0 300px;
     padding:0;
+	position:relative;
     background-color:rgba(29, 93, 77, 1);
     
 }
@@ -130,4 +141,15 @@ body {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+#reg_wrapper{
+	float:left;
+}
+input.form-control{
+	width: auto;
+}
+
+#user_status {
+	color: red;
+	margin-left: 2em;
 }

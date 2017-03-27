@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+    <title>Student Registration Page</title>
+</head>
+<body style="background-image:url('try.jpg');background-repeat:no-repeat;background-size:cover;">
+
+<div id="heading">
+  <h1>STUDENT REGISTRATION PAGE</h1>
+</div>
+
+<div class="container">
+	<h3><b>Upload a Profile Picture</b></h3>
+ <hr> 
+ <div id="preview"><img src="pro.jpg" /></div>
+ <form id="form" action="upload.php" method="post" enctype="multipart/form-data">
+  <input id="uploadImage" type="file" accept="image/*" name="image" />
+  <input id="button" type="submit" value="Upload">
+ </form>
+    <div id="err"></div>
+ <hr>
+</div>
+<br><br><br>
+
+<div class="container">
+  <h3><b>Personal Details</b></h3>
+  <div class="row">
+    <div class="col-md-3">
+
+        <form class="form-horizontal" method="post" action="register.php">
+            <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label for="reg">Registration Number: </label>
+                <input id="reg" type="text" class="form-control" name="reg" placeholder="20140087" onchange="updateYT();" required>
+            </div>
+            <div class="form-group">
+              <label>Your Institute Roll Number: </label>
+              <input id="yt" class="form-control" type="text" name="roll" placeholder="Automatically Generated" disabled="disabled">
+          </div>
+          <div class="form-group">
+              <label>Date Of Birth: </label>
+              <input id="dob" class="form-control" type="date" name="dob" placeholder="1995-10-30" onchange="updateAge()" required>
+          </div>
+      </form>
+  </div>
+  <div class="col-md-1"></div>
+  <div class="col-md-3">
+    <form class="form-horizontal" method="post" action="register.php">
+        <div class="form-group">
+            <label for="midname">Middle Name</label>
+            <input type="text" id="midnamer" name="midname" class="form-control" placeholder="Middle Name">
+        </div>
+        <div class="form-group">
+            <label for="branch">Branch: </label>
+            <select  class="form-control" id="branch" name="branch" onchange="updateYT();">
+             <option value="BT">BT</option>
+             <option value="CH">CH</option>
+             <option value="CE">CE</option>
+             <option value="CSE">CSE</option>
+             <option value="ECE">ECE</option>
+             <option value="EE">EE</option>
+             <option value="IT">IT</option>
+             <option value="ME">ME</option>
+             <option value="MME">MME</option>
+         </select>
+     </div>
+     <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com">
+    </div>
+    <div class="form-group">
+      <label>Age</label>
+      <input class="form-control" type="text" id="age">
+  </div>
+</form>
+</div>
+<div class="col-md-1"></div>
+<div class="col-md-3">
+    <form class="form-horizontal" method="post" action="register.php">
+        <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last Name">
+        </div>
+
+        <div class="form-group">
+          <label for="roll">Roll Number: </label>
+          <span id="prefix">&nbsp;</span>
+          <input id="roll" class="form-control" type="text" name="rolln" placeholder="05" onchange="updateYT();" required>
+      </div>
+      <div class="form-group">
+        <label for="branch">Contact Number: </label>
+        <input class="form-control" id="contact" type="text" name="contact" placeholder="10-digit phone number">;
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender: </label>
+      <br>
+      <div style="float:left;">
+          <input type="radio" name="gender" value="male" >Male<br>
+          <input type="radio" name="gender" value="female" >Female<br>
+          <input type="radio" name="gender" value="other" >Other<br>
+      </div>
+  </div>
+</form>
+</div>
+</div>
+<br><br><br>
+<div>
+	<div class="container">
+		<div class="row">
+           <h3><b>Educational Qualifications</b></h3>
+
+           <div class="col-md-12">
+              <p><b>Under Graduate(B.Tech)</b></p>
+              <form class="form-horizontal">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-highlight">
+                        <thead>
+                            <th>1st Semester</th>
+                            <th>2nd Semester</th>
+                            <th>3rd Semester</th>
+                            <th>4th Semester</th>
+                            <th>5th Semester</th>
+                            <th>6th Semester</th>
+                            <th>7th Semester</th>
+                            <th>8th Semester</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                                <td><input type="text" class="form-control" placeholder="SGPA"/></td>
+                            </tr>
+                            <tr>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                               <td><input type="text" class="form-control" placeholder="CGPA"/></td>
+                           </tr>
+                       </tbody>
+                   </table>
+               </div>
+           </form>
+           <br>
+           <p><b>Higher Secondary</b></p>
+           <form class="form-horizontal">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped table-highlight">
+                    <thead>
+                        <th>Board</th>
+                        <th>Name of the Institution</th>
+                        <th>Total Marks</th>
+                        <th>Total Marks Obtained</th>
+                        <th>Percentage(%)</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                              <select class="form-control">
+                                 <option>Central Board of Secondary Education (CBSE)</option>
+                                 <option>Indian Certificate of Secondary Education (ICSE)</option>
+                                 <option>State Boards</option>
+                                 <option>Others</option>
+                             </select>
+                         </td>
+                         <td><input type="text" class="form-control"/></td>
+                         <td><input type="text" class="form-control"/></td>
+                         <td><input type="text" class="form-control"/></td>
+                         <td><input type="text" class="form-control"/></td>
+                     </tr>
+                 </tbody>
+             </table>
+         </div>
+     </form>
+     <br>
+     <p><b>Senior Secondary</b></p>
+     <form class="form-horizontal">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-highlight">
+                <thead>
+                    <th>Board</th>
+                    <th>Name of the Institution</th>
+                    <th>Total Marks/CGPA</th>
+                    <th>Total Marks Obtained/CGPA</th>
+                    <th>Percentage(%)/CGPA</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                          <select class="form-control">
+                             <option>Central Board of Secondary Education (CBSE)</option>
+                             <option>Indian Certificate of Secondary Education (ICSE)</option>
+                             <option>State Boards</option>
+                             <option>Others</option>
+                         </select>
+                     </td>
+                     <td><input type="text" class="form-control"/></td>
+                     <td><input type="text" class="form-control"/></td>
+                     <td><input type="text" class="form-control"/></td>
+                     <td><input type="text" class="form-control"/></td>
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+ </form>
+</div>
+</div>
+</div>
+<br><br>
+<div class="form-horizontal">
+	<div class="container">
+		<div class="row">
+			<h3><b>Address for Communication</b></h3>
+			<div class="col-md-5">
+				<h4>Current Address</h4>
+				<form class="form-horizontal" method="post" action="register.php">
+            <div class="form-group">
+                <label for="housenumber">House Number:</label>
+                <input type="text" id="housenumber" name="chousenumber" style="float:right" size="45">
+            </div>
+			<div class="form-group">
+                <label for="landmark">Landmark:</label>
+                <input type="text" id="landmark" name="clandmark" style="float:right" size="45">
+            </div>
+            <div class="form-group">
+                <label for="street">Street: </label>
+                <input id="street" name="cstreet" type="text" style="float:right" size="45">
+            </div>
+            <div class="form-group">
+              <label for="pincode">Pincode: </label>
+              <input id="pin" name="cpin" type="text" style="float:right" size="45">
+          </div>
+		  <div class="form-group">
+              <label for="state">State: </label>
+              <input id="state"  name="cstate" type="text" style="float:right" size="45">
+          </div>
+		  <div class="form-group">
+              <label for="country">Country: </label>
+              <input id="country" type="text" name="ccountry" style="float:right" size="45">
+          </div>
+				
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-5">
+			<input type="checkbox" name="billingtoo" onclick="Fill(this.form)">
+			<em>Check this box if Current Address and Permanent Address are the same.</em>
+				<h4>Permanent Address</h4>
+				<form class="form-horizontal" method="post" action="register.php">
+            <div class="form-group">
+                <label for="housenumber">House Number:</label>
+                <input type="text" id="housenumber" name="phousenumber" style="float:right" size="45">
+            </div>
+			<div class="form-group">
+                <label for="landmark">Landmark:</label>
+                <input type="text" id="landmark" name="plandmark" style="float:right" size="45">
+            </div>
+            <div class="form-group">
+                <label for="street">Street: </label>
+                <input id="street" type="text" name="pstreet" style="float:right" size="45">
+            </div>
+            <div class="form-group">
+              <label for="pincode">Pincode: </label>
+              <input id="pin" type="text" name="ppin" style="float:right" size="45">
+          </div>
+		  <div class="form-group">
+              <label for="state">State: </label>
+              <input id="state" type="text" name="pstate" style="float:right" size="45">
+          </div>
+		  <div class="form-group">
+              <label for="country">Country: </label>
+              <input id="country" type="text" name="pcountry" style="float:right" size="45">
+          </div>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
+<div class="form-horizontal">
+    <div class="container">
+       <div class="row">
+          <h3><b>Skills</b></h3>
+          <div class="col-md-4">
+			<p>
+                  <input type="checkbox" id="cbox1" value="adobephotoshop">
+                  <label for="cbox1">Adobe Photoshop</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="ajax">
+                  <label for="cbox1">AJAX</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="bootstrap">
+                  <label for="cbox1">Bootstrap</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="c">
+                  <label for="cbox1">C</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="cplusplus">
+                  <label for="cbox1">C++</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="csharp">
+                  <label for="cbox1">C#</label>
+              </p>
+         </div>
+		 <div class="col-md-4">
+			<p>
+                  <input type="checkbox" id="cbox1" value="catia">
+                  <label for="cbox1">CATIA</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="autocad">
+                  <label for="cbox1">AutoCAD</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="java">
+                  <label for="cbox1">Java</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="matlab">
+                  <label for="cbox1">MATLAB</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="python">
+                  <label for="cbox1">Python</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="node">
+                  <label for="cbox1">NodeJS</label>
+              </p>
+         </div>
+		 <div class="col-md-4">
+			<p>
+                  <input type="checkbox" id="cbox1" value="htmlcss">
+                  <label for="cbox1">HTML/CSS</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="javascript">
+                  <label for="cbox1">Javascript</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="jquery">
+                  <label for="cbox1">JQuery</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox1" value="php">
+                  <label for="cbox1">PHP</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="android">
+                  <label for="cbox1">Android</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox1" value="react">
+                  <label for="cbox1">ReactJS</label>
+              </p>
+         </div>
+     </div>
+ </div>
+<br><br>
+ <div class="form-horizontal">
+    <div class="container">
+       <div class="row">
+          <h3><b>Hobbies</b></h3>
+          <div class="col-md-12">
+              <p>
+                  <input type="checkbox" id="cbox2" value="readingnovels">
+                  <label for="cbox1">Reading Novels</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox2" value="music">
+                  <label for="cbox1">Listening Music</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox2" value="playingcricket">
+                  <label for="cbox1">Playing Cricket</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox2" value="singing">
+                  <label for="cbox1">Singing</label>
+              </p>
+              <p>
+                  <input type="checkbox" id="cbox2" value="dancing">
+                  <label for="cbox1">Dancing</label>
+              </p>
+			  <p>
+                  <input type="checkbox" id="cbox2" value="dancing">
+                  <label for="cbox1">Cooking</label>
+              </p>
+          </div>
+      </div>
+  </div>
+  <br><br>
+  <center><input id="submit-button" type="submit" value="Register">
+  </center>
+</div>
+</div>
+</div>
+<div class="footer" style="padding-bottom: 10px; float: left">
+    Copyright &copy; 2017 NIT Dgp
+</div>
+</div>
+
+
+</body>
+<script>
+    function updateYT() {
+      var reg = jQuery('#reg');
+      var branch = jQuery('#branch');
+      var roll = jQuery('#roll');
+      var yt = jQuery('#yt');
+      var pre = jQuery('#prefix');
+      if (!reg || !branch || !roll || !yt || !pre) {
+         console.log("ERROR: Input field not found!");
+         return false;
+     }
+
+     var regstr = reg.val();
+     if (regstr.length < 4) {
+         console.log("Reg string is too short");
+         return false;
+     } else {
+         regstr = regstr.substring(2, 4);
+         console.log('REGSTR:');
+         console.log(regstr);
+     }
+
+     var branchstr = branch.val();
+     if (branchstr.length < 2) { 
+         console.log("Branch string is too short");
+     }
+
+     pre.html( regstr + '/' + branchstr + '/');
+
+     var rollstr = roll.val();
+     if (rollstr.length < 1) { 
+         console.log("Roll string is too short");
+     }
+
+     var ret =  regstr + '/' +  branchstr + '/' + rollstr;
+     yt.val(ret);
+ }
+
+ function updateAge(){
+   var dob = $('#dob').val();
+        dob = new Date(dob);
+        var today = new Date();
+        var years = Math.floor((today - dob) / (365.25 * 24 * 60 * 60 * 1000));
+        var months = (Math.floor((((today - dob) / (1000 * 60 * 60 * 24)) - (years * 365.25)) / 30));
+        $('#age').val(years + ' years  and ' + months +' months old');
+}
+function Fill(f) {
+  if(f.billingtoo.checked == true) {
+    f.phousenumber.value = f.chousenumber.value;
+    f.plandmark.value = f.clandmark.value;
+	f.pstreet.value = f.cstreet.value;
+	f.ppin.value = f.cpin.value;
+	f.pstate.value = f.cstate.value;
+	f.pcountry.value = f.ccountry.value;
+  }
+}
+</script>
+</html>

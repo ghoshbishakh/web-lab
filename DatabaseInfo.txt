@@ -1,0 +1,7 @@
+TABLES
+
+users
+======
+Fields:
+username, email, reg, password 
+
