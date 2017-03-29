@@ -9,8 +9,8 @@
 
     session_start();
     
-    if (!isset($_SESSION['login_user'])){
-        header("location:  login.php?message=notloggedin");
+    if (!isset($_SESSION['admin_user'])){
+        header("location:  admin_login.php?message=notloggedin");
     }
 
 
@@ -53,14 +53,20 @@
 
     <?php
     // echo $_SESSION['login_user'];
-    if (isset($_SESSION['login_user'])){
+    if (isset($_SESSION['admin_user'])){
     // LOGGED IN
-        $username = $_SESSION['login_user'];
-        $sql = sprintf("SELECT * FROM user WHERE username='%s'", $username);
+        ?>
+        <div style="text-align:center;border:5px solid #100808">
+            <h2>Logged in!!</h2>
+        </div>
+        <h2>Unactivated Users</h2>
+        <?php
+        $username = $_SESSION['admin_user'];
+        $sql = sprintf("SELECT * FROM user WHERE activated=0");
         $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
+            while($row = $result->fetch_assoc()) {
             // print_r($row);
             $user_name = $row['username'];
             $fullname = $row['fullname'];
@@ -72,40 +78,26 @@
             $gender = $row['gender'];
             $dob = $row['dob'];
             $activated = $row['activated'];
-            // output data of each row
-            // while($row = $result->fetch_assoc()) {
-            //     echo print_r($row);
-            // }
+            ?>
+            <span>Fullname: <?php echo $fullname; ?></span><br>
+            <span>Email: <?php echo $email; ?></span><br>
+            <span>Registration No: <?php echo $regno; ?></span><br>
+            <span>Branch: <?php echo $branch; ?></span><br>
+            <span>Roll No: <?php echo $rollno; ?></span><br>
+            <span>Contact No: <?php echo $contact; ?></span><br>
+            <span>Gender: <?php echo $gender; ?></span><br>
+            <span>Date of Birth: <?php echo $dob; ?></span><br>
+            <span>Is account activated: <?php echo $activated; ?></span><br>
+            <a href="activate.php?username=<?php echo $user_name; ?>"><button>Activate</button></a>
+            <hr>
+            <?php
+            }
         } else {
             echo "0 results";
         }
-        if($activated){
         ?>
         
-        <div style="text-align:center;border:5px solid #100808">
-            <h2>Logged in!!</h2>
-            <hr>
-            <h3>Fullname: <?php echo $fullname; ?></h3>
-            <h3>Email: <?php echo $email; ?></h3>
-            <h3>Registration No: <?php echo $regno; ?></h3>
-            <h3>Branch: <?php echo $branch; ?></h3>
-            <h3>Roll No: <?php echo $rollno; ?></h3>
-            <h3>Contact No: <?php echo $contact; ?></h3>
-            <h3>Gender: <?php echo $gender; ?></h3>
-            <h3>Date of Birth: <?php echo $dob; ?></h3>
-            <center><a href="reg.html"><button>Edit Full Profile</button></a></center>
-        </div>
-        
         <?php
-    }
-    else {
-        // NOT ACTIVATED
-        ?>
-        <div style="text-align:center;border:5px solid #100808">
-            <h1>Not Activated</h1>
-        </div>
-        <?php
-    }
     }
     else {
         // NOT LOGGED IN

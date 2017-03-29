@@ -42,7 +42,7 @@ body {
 #navr ul{
     list-style-type:none;
     padding:0;
-    position:relative;
+    margin: 0 auto;
     background-color:rgba(29, 93, 77, 1);
     
 }
@@ -185,4 +185,10 @@ input.form-control{
 #user_status {
 	color: red;
 	margin-left: 2em;
+}
+
+.message {
+    display: block;
+    background: #ffb9b9;
+    padding: 1em;
 }

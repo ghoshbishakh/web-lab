@@ -1,7 +1,25 @@
+<?php
+    $host = 'localhost';
+    $db = 'student';
+    $user = 'root';
+    $password = 'root';
+    $con = new mysqli($host,$user,$password) or die('connection failed');
+    // echo "connection established";
+    mysqli_select_db($con,$db);
+
+    session_start();
+
+    if (isset($_SESSION['admin_user'])){
+        header("location:  adminprofile.php");
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Administrator Login</title>
+	<title>Student Login</title>
 	<link href="style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -22,7 +40,7 @@
                 <li class="dropdown">
                     <a class="dropbtn">Log In</a>
                     <div class="dropdown-content">
-                        <a href="admin_login.html" target="blank">Administrator Login</a>
+                        <a href="admin_login.php" target="blank">Administrator Login</a>
                         <a href="login.php" target="blank">Student Login</a>
                     </div>
                 </li>
@@ -36,20 +54,38 @@
 		<div style="float:left; width:50%;">
 		</div>
 		<div style="float:left; width:50%;">
-		</div>	
-		<form>
+		</div>
+        <?php
+            if(isset($_GET["message"])){
+
+                $msg = $_GET["message"];
+                if($msg == "failed"){
+                    $msg = "Incorrect username or password";
+                }
+                if($msg == "notloggedin"){
+                    $msg = "Please log in first";
+                }
+                echo "<div class='message'>".$msg."</div>";
+            
+            }
+        ?>
+		<form method="post" action="admincheck.php">
 			<center>
-				<h1>Administrator Login</h1>
+				<h1>Admin Login</h1>
 			</center>
 			<label>Username: </label>
 			<input class="text-input" type="text" name="username" placeholder="username">
 			<br><br><label>Password: </label>
 			<input class="text-input" type="password" name="password" placeholder="Password">
 			<br><br>
-			<center><input id="submit-button" type="submit" value="Submit "></center>
+			<center><input id="submit-button" type="submit" name="submit" value="Submit "></center>
 		</form>
+		<center>
+		<a href="#">Forgot your Password?</a>
+		</center>
 	</div>
     </div>
+	
 
 </body>
 </html>
