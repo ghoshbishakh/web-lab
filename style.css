@@ -167,6 +167,15 @@ body {
 
 }
 
+.sgpa-input {
+    width: 2.4em;
+}
+
+
+.secondary-exam-table input {
+    width: 8em;
+}
+
 /* STUDENT HOME PAGE STYLES */
 
 #nit-logo {
